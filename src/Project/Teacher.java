@@ -71,6 +71,18 @@ public class Teacher extends Employee implements Researcher{
 
 		
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Teacher [courses=" + courses + ", publishedPapers=" + publishedPapers + ", researchProjects="
+				+ researchProjects + ", salary=" + salary + ", yearOfJoin=" + yearOfJoin + ", isResearcher="
+				+ isResearcher + ", firstName=" + firstName + ", lastName=" + lastName + ", id=" + id + ", login="
+				+ login + ", password=" + password + ", language=" + language + "]";
+	}
+	
+	
  
 
 }

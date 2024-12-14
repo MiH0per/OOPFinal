@@ -7,18 +7,17 @@ class Marks {
     private double finalGrades;
     private double totalGrades;
 
-    public Marks(Course course, double firstAtt, double secondAtt, double finalGrades, double totalGrades) {
+    public Marks(Course course, double firstAtt, double secondAtt, double finalGrades) {
         this.course = course;
         this.firstAtt = firstAtt;
         this.secondAtt = secondAtt;
-        this.finalGrades = finalGrades;
-        this.totalGrades = totalGrades;
+        this.finalGrades = finalGrades;        
     }
 
-    public String gradesToLetter() { return ""; }
-    public double calculateGpaForCourse() { return 0.0; }
-    public boolean isAllowedToFinal() { return true; }
-    public boolean checkScholarship() { return false; }
+    public boolean isAllowedToFinal() {
+    	return (firstAtt + secondAtt) >= 30; 
+    }
+
 
 	public Course getCourse() {
 		return course;
@@ -33,7 +32,10 @@ class Marks {
 	}
 
 	public void setFirstAtt(double firstAtt) {
-		this.firstAtt = firstAtt;
+	    if (firstAtt < 0) {
+	        throw new IllegalArgumentException("Marks cannot be negative");
+	    }
+	    this.firstAtt = firstAtt;
 	}
 
 	public double getSecondAtt() {
@@ -41,6 +43,9 @@ class Marks {
 	}
 
 	public void setSecondAtt(double secondAtt) {
+		if (secondAtt < 0) {
+			throw new IllegalArgumentException("Marks cannot be negative");
+		}
 		this.secondAtt = secondAtt;
 	}
 
@@ -53,12 +58,20 @@ class Marks {
 	}
 
 	public double getTotalGrades() {
-		return totalGrades;
+		return firstAtt + secondAtt + finalGrades;
+	}
+	
+	@Override
+	public String toString() {
+	    return "Marks{" +
+	            "course=" + course +
+	            ", firstAtt=" + firstAtt +
+	            ", secondAtt=" + secondAtt +
+	            ", finalGrades=" + finalGrades +
+	            ", totalGrades=" + getTotalGrades() +
+	            '}';
 	}
 
-	public void setTotalGrades(double totalGrades) {
-		this.totalGrades = totalGrades;
-	}
     
     
 }

@@ -11,6 +11,11 @@ class Employee extends User implements CanDoResearch {
         this.yearOfJoin = yearOfJoin;
         this.isResearcher = isResearcher;
     }
+    
+    public Employee(String login, String password) {
+    	super(login, password);
+    	Data.addUser(this);
+    }
 
 
 
