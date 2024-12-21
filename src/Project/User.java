@@ -22,8 +22,7 @@ class User implements Observer {
     	this.password = password;
     }
 
-    boolean logIn() { return true; }
-    void logOut() {}
+    
     void changeLanguage(Language language) { this.language = language; }
 
     @Override

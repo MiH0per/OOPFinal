@@ -8,7 +8,6 @@ public class Lesson {
 	private Course course;
 	
 	public Lesson(LessonType lessonType, String room, Date time, Course course) {
-		super();
 		this.lessonType = lessonType;
 		this.room = room;
 		this.time = time;

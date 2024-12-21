@@ -12,5 +12,39 @@ class Loan {
         this.borrowedDate = borrowedDate;
         this.dueDate = dueDate;
     }
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public String getBorrowedDate() {
+		return borrowedDate;
+	}
+
+	public void setBorrowedDate(String borrowedDate) {
+		this.borrowedDate = borrowedDate;
+	}
+
+	public String getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(String dueDate) {
+		this.dueDate = dueDate;
+	}
+    
+    
 }
 

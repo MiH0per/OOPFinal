@@ -14,9 +14,9 @@ public class Data {
 	}
 	
 	public static void addUser(User u) {
-		if (users.containsKey(u.getLogin())) {
-	        System.out.println("Warning: Overwriting existing user with login: " + u.getLogin());
-	    }
+//		if (users.containsKey(u.getLogin())) {
+//	        System.out.println("Warning: Overwriting existing user with login: " + u.getLogin());
+//	    }
 	    users.put(u.getLogin(), u);
 	}
 	

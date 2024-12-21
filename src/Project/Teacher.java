@@ -15,6 +15,14 @@ public class Teacher extends Employee implements Researcher{
 		this.publishedPapers = new ArrayList<>();
         this.researchProjects = new ArrayList<>();
 	}
+    
+    public Teacher(String firstName, String lastName, String id, String login, String password, Language language,
+			double salary, int yearOfJoin, boolean isResearcher) {
+		super(firstName, lastName, id, login, password, language, salary, yearOfJoin, isResearcher);
+		this.courses = new ArrayList();
+		this.publishedPapers = new ArrayList<>();
+        this.researchProjects = new ArrayList<>();
+	}
 
 
 
@@ -23,16 +31,16 @@ public class Teacher extends Employee implements Researcher{
             courses.add(course);
         }
     }
-    public void addCourseToUniversity(Course course) {
-        addCourse(course);
-    }
+    
 
     public List<Course> getCourses() {
         return new ArrayList<>(courses);
     }
 
-    public void setMark(Student student, Course course, double mark) {
-
+    public void setMark(Student student, Course course, double firstAtt, double secondAtt, double finalGrades) {  	
+    	Marks newMark = new Marks(course, firstAtt, secondAtt, finalGrades);
+        student.getTranscript().addMark(newMark);
+        System.out.println("Marks successfully added for " + student.getFirstName() + " " + student.getLastName());
     }
 
     public void fileComplaintAboutStudent(Student student, String complaintText) {
@@ -65,14 +73,6 @@ public class Teacher extends Employee implements Researcher{
 	public List<ResearchPaper> getPublishedPapers() {
 		return null;
 	}
-
-	@Override
-	public void addPublishedPaper(ResearchPaper paper) {
-
-		
-	}
-
-
 
 	@Override
 	public String toString() {

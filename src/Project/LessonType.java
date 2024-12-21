@@ -1,5 +1,5 @@
 package Project;
 
 public enum LessonType {
-	PRACTICE, LECTURE 
+	PRACTICE, LECTURE, LAB
 }

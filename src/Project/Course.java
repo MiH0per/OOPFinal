@@ -10,18 +10,18 @@ class Course {
 
     public Course(String name, String code, int credits, int maxNumberOfStudents, CourseType courseType, Teacher instructor) {
         this.name = name;
-        this.code = code;
+        this.code = code;		
         this.credits = credits;
         this.maxNumberOfStudents = maxNumberOfStudents;
         this.courseType = courseType;
         this.instructor = instructor;
     }
 
-	public String getName() {
+	public String getCourseName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setCourseName(String name) {
 		this.name = name;
 	}
 
@@ -64,6 +64,14 @@ class Course {
 	public void setInstructor(Teacher instructor) {
 		this.instructor = instructor;
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Course [name=" + name + ", code=" + code + ", credits=" + credits + ", maxNumberOfStudents="
+//				+ maxNumberOfStudents + ", courseType=" + courseType + ", instructor=" + instructor + "]";
+//	}
+	
+	
 
     
 }

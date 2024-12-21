@@ -10,9 +10,15 @@ class Admin extends Employee {
 		Data.addAdmin(this);
 	}
     
-    
+    public void addUser(User user) {
+        System.out.println("User added: " + user);
+        Data.addUser(user);
+    }
 
-    void addUser(User user) {}
-    void removeUser() {}
+    public void removeUser(String userId) {
+        System.out.println("User removed: " + userId);
+    }
+
+   
     void seeLogFiles() {}
 }

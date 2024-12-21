@@ -11,7 +11,6 @@ public class CourseApplication {
         this.status = RequestStatus.PENDING;
     }
 
-    // Dependency injection
     public Student getApplicant() {
         return applicant;
     }

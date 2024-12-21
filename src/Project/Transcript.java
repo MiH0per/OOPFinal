@@ -33,7 +33,7 @@ public class Transcript{
         double totalGradePoints = 0.0;
         int totalCredits = 0;
         for (Marks mark : marks) {
-            totalGradePoints += mark.getTotalGrades() * mark.getCourse().getCredits();
+            totalGradePoints += mark.getTotalGrades();
             totalCredits += mark.getCourse().getCredits();
         }
         return totalCredits > 0 ? totalGradePoints / totalCredits : 0.0;

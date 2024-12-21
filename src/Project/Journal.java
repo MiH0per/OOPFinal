@@ -1,13 +1,21 @@
 package Project;
 
-class Journal {
-    private Observer[] subscribers;
+import java.util.ArrayList;
 
-    public Journal(Observer[] subscribers) {
-        this.subscribers = subscribers;
+class Journal {
+	private ArrayList<Observer> subscribers;
+
+    public Journal() {
+        this.subscribers = new ArrayList<>();
     }
 
-    public void subscribeToJournal(Observer observer) {}
-    public void deleteFromJournal(Observer observer) {}
-    public void notifyObservers() {}
+    public void subscribeToJournal(Observer observer) {
+        subscribers.add(observer);
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : subscribers) {
+            observer.update();
+        }
+    }
 }

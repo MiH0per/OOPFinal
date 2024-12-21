@@ -28,7 +28,6 @@ public class ResearchProject{
         publishedPapers.add(paper);
     }
 
-    // Dependency injection
     public String getProjectId() {
         return projectId;
     }

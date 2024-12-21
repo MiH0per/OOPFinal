@@ -1,6 +1,6 @@
 package Project;
 
-class Employee extends User implements CanDoResearch {
+class Employee extends User {
     double salary;
     int yearOfJoin;
     boolean isResearcher;
@@ -55,6 +55,4 @@ class Employee extends User implements CanDoResearch {
 
 
 
-	@Override
-    public void doResearch() {}
 }
