@@ -54,10 +54,10 @@ public class Teacher extends Employee implements Researcher{
     }
 
     @Override
-    public void participateInProject(ResearchProject project) {
-        researchProjects.add(project);	
+    public void participateInProject(ResearchProject project) throws NotResearcherException {
+        researchProjects.add(project);
+        project.addParticipant(this);
     }
-    
 
     @Override
     public List<ResearchProject> getResearchProjects() {

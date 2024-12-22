@@ -7,7 +7,7 @@ public class ResearchProject{
     private String projectId;
     private String title;
     private String theme;
-    private List<Researcher> participants;
+    private List<User> participants;
     private List<ResearchPaper> publishedPapers;
 
     public ResearchProject(String projectId, String title, String theme) {
@@ -18,10 +18,16 @@ public class ResearchProject{
         this.publishedPapers = new ArrayList<>();
     }
 
-    public void addParticipant(Researcher researcher) {
-        if (!participants.contains(researcher)) {
-            participants.add(researcher);
+    public void addParticipant(User researcher) throws NotResearcherException {
+        try {
+            if (!researcher.isResearcher) throw new NotResearcherException();
+            if (!participants.contains(researcher)) {
+                participants.add(researcher);
+            }
+        } catch (NotResearcherException nre) {
+            System.out.println(nre.getMessage());
         }
+
     }
 
     public void addPaper(ResearchPaper paper) {
@@ -40,7 +46,7 @@ public class ResearchProject{
         return theme;
     }
 
-    public List<Researcher> getParticipants() {
+    public List<User> getParticipants() {
         return new ArrayList<>(participants);
     }
 
@@ -60,7 +66,7 @@ public class ResearchProject{
         this.theme = theme;
     }
 
-    public void setParticipants(List<Researcher> participants) {
+    public void setParticipants(List<User> participants) {
         this.participants = new ArrayList<>(participants);
     }
 

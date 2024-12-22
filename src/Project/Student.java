@@ -14,12 +14,11 @@ public class Student extends User implements Researcher{
     private boolean isResearcher;
 
     public Student(String firstName, String lastName, String id, String login, String password, Language language, Faculty school, boolean isResearcher) {
-        super(firstName, lastName, id, login, password, language);
+        super(firstName, lastName, id, login, password, language, isResearcher);
         this.publishedPapers = new ArrayList<>();
         this.researchProjects = new ArrayList<>();
         this.enrolledCourses = new ArrayList<>();
         this.transcript = new Transcript(this);
-        this.isResearcher = isResearcher;
         this.school = school;
     }	
     
@@ -107,7 +106,7 @@ public class Student extends User implements Researcher{
     }
     
     @Override
-    public void participateInProject(ResearchProject project) {
+    public void participateInProject(ResearchProject project) throws NotResearcherException {
         researchProjects.add(project);
         project.addParticipant(this);
     }

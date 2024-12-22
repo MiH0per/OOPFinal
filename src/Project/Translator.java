@@ -21,7 +21,8 @@ public class Translator {
                 Map.entry("publishingArticle", "New article published"),
                 Map.entry("notifyingUser", "received an email notification"),
                 Map.entry("consideringComplaint", "Your complaint has been approved. Wait for a reply"),
-                Map.entry("errorRegistering", "Registration failed")
+                Map.entry("errorRegistering", "Registration failed"),
+                Map.entry("researcherException", "Error! User who is not researcher cannot participate in research project.")
         );
         Map<String, String> ruMessages = Map.ofEntries(
                 Map.entry("greeting", "Добро пожаловать!"),
@@ -39,7 +40,8 @@ public class Translator {
                 Map.entry("publishingArticle", "Опубликована новая статья"),
                 Map.entry("notifyingUser", "получил(-a) уведомление"),
                 Map.entry("consideringComplaint", "Ваша жалоба одобрена. Ждите ответа"),
-                Map.entry("errorRegistering", "Регистрация не удалась")
+                Map.entry("errorRegistering", "Регистрация не удалась"),
+                Map.entry("researcherException", "Ошибка! Пользователь, не являющийся исследователем, не может участвовать в исследовательском проекте.")
         );
         Map<String, String> kzMessages = Map.ofEntries(
                 Map.entry("greeting", "Қош келдіңіз!"),
@@ -56,7 +58,8 @@ public class Translator {
                 Map.entry("publishingArticle", "Жаңа мақала жарияланды"),
                 Map.entry("notifyingUser", "хабарлама алды"),
                 Map.entry("consideringComplaint", "Шағымыңыз мақұлданды. Жауап күтіңіз."),
-                Map.entry("errorRegistering", "Тіркеу сәтсіз аяқталды")
+                Map.entry("errorRegistering", "Тіркеу сәтсіз аяқталды"),
+                Map.entry("researcherException", "Қате! Зерттеуші болып табылмайтын пайдаланушы ғылыми жобаға қатыса алмайды.")
         );
 
         if (language == Language.EN) {

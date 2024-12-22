@@ -1,15 +1,19 @@
 package Project;
 
-class Employee extends User {
+import java.util.ArrayList;
+import java.util.List;
+
+class Employee extends User implements Researcher {
     double salary;
     int yearOfJoin;
+	private List<ResearchPaper> publishedPapers;
+	private List<ResearchProject> researchProjects;
     boolean isResearcher;
 
     public Employee(String firstName, String lastName, String id, String login, String password, Language language, double salary, int yearOfJoin, boolean isResearcher) {
-        super(firstName, lastName, id, login, password, language);
+        super(firstName, lastName, id, login, password, language, isResearcher);
         this.salary = salary;
         this.yearOfJoin = yearOfJoin;
-        this.isResearcher = isResearcher;
     }
     
     public Employee(String login, String password) {
@@ -17,7 +21,26 @@ class Employee extends User {
     	Data.addUser(this);
     }
 
+	@Override
+	public void publishResearch(ResearchPaper paper) {
+		publishedPapers.add(paper);
+	}
 
+	@Override
+	public void participateInProject(ResearchProject project) throws NotResearcherException {
+		researchProjects.add(project);
+		project.addParticipant(this);
+	}
+
+	@Override
+	public List<ResearchProject> getResearchProjects() {
+		return new ArrayList<>(researchProjects);
+	}
+
+	@Override
+	public List<ResearchPaper> getPublishedPapers() {
+		return null;
+	}
 
 	public double getSalary() {
 		return salary;

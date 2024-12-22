@@ -35,7 +35,7 @@ public class Main {
 	}
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotResearcherException {
 		System.out.println("Choose system language (en, ru, kz): ");
 		String lang = inp.next();
 		switch (lang) {
@@ -74,26 +74,31 @@ public class Main {
 		System.out.println();
 		
 
-		
 		u2.registerForCourse(oop_course, or);
 		teacher.setMark(u2, oop_course, 15.0, 20.0, 30.0);  
 		System.out.println(u2.viewGradesForCourse(oop_course));  
-		
-		
-		
+
 		Transcript transcript = new Transcript(u2);
 		Marks mark = new Marks(oop_course, 15.0, 20.0, 30.0);
-
 		transcript.addMark(mark);
 		System.out.println(transcript.getMarksForCourse(oop_course));
 		System.out.println(transcript.calculateGPA());
 
+
 		System.out.println();
+
 
 		Journal techJournal = new Journal();
 		techJournal.subscribeToJournal(u1);
 		techJournal.subscribeToJournal(u2);
 		techJournal.notifyObservers("New article");
+
+
+		System.out.println();
+
+
+		ResearchProject researchProject = new ResearchProject("123", "final", "oop");
+		u2.participateInProject(researchProject);
 		
 
 	}
