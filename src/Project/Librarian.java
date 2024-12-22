@@ -1,10 +1,8 @@
 package Project;
 
 class Librarian extends Employee {
-    private double salary;
 	private Book[] books;
 	private Library library;
-	private int yearOfJoin;
 	private boolean isResearcher;
 
     public Librarian(String firstName, String lastName, String id, String login, String password, Language language, double salary, int yearOfJoin, boolean isResearcher,  Book[] books, Library library) {

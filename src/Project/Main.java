@@ -60,7 +60,9 @@ public class Main {
 		System.out.println(u1.getFirstName());
 		User admin = new Admin("Admin", "admin", "123", "admin", "admin", Language.EN, 1, 2000, false);
 		System.out.println(admin.getLogin());
+		Manager or = new Manager("ManagerName", "ManagerSurname", "123", "or", "pass", Language.EN, 4000, 2012, false, ManagerType.OR);
 
+		or.addCourseForRegistration(oop_course);
 		Data.addUser(teacher);
 		Data.addUser(u1);
 		Data.addUser(u2);
@@ -73,7 +75,7 @@ public class Main {
 		
 
 		
-		u2.registerForCourse(oop_course);
+		u2.registerForCourse(oop_course, or);
 		teacher.setMark(u2, oop_course, 15.0, 20.0, 30.0);  
 		System.out.println(u2.viewGradesForCourse(oop_course));  
 		

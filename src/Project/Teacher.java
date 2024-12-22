@@ -35,7 +35,7 @@ public class Teacher extends Employee implements Researcher{
     public void setMark(Student student, Course course, double firstAtt, double secondAtt, double finalGrades) {  	
     	Marks newMark = new Marks(course, firstAtt, secondAtt, finalGrades);
         student.getTranscript().addMark(newMark);
-        System.out.println(Translator.translate("addingMarks", Main.language) + " " + student.getFirstName() + " " + student.getLastName());
+        System.out.println(Translator.translate("addingMarks", Main.language) + ": " + student.getFirstName() + " " + student.getLastName());
     }
 
     public void sendComplaint(Student student, Manager manager, UrgencyLevel urgencyLevel, Complaint complaint) {

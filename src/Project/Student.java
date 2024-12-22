@@ -25,9 +25,15 @@ public class Student extends User implements Researcher{
     
 
     
-    public void registerForCourse(Course course) { 
-        enrolledCourses.add(course);
-        System.out.println(Translator.translate("successRegistering", Main.language) + " " + course.getCourseName());
+    public void registerForCourse(Course course, Manager manager) {
+        if (this.canEnrollInCourse(course) && manager.approveRegistration(course)) {
+            enrolledCourses.add(course);
+            System.out.println(Translator.translate("successRegistering", Main.language) + ": " + course.getCourseName());
+        }
+        else {
+            System.out.println(Translator.translate("errorRegistering", Main.language) + ": " + course.getCourseName());
+        }
+
     }
     
     //Просмотреть учителя
