@@ -1,8 +1,9 @@
 package Project;
 
 class Comment {
-    String content;
-    User user;
+    private String content;
+    private User user;
+	private boolean isPinned;
 
     public Comment(String content, User user) {
         this.content = content;
@@ -24,7 +25,9 @@ class Comment {
 	public void setUser(User user) {
 		this.user = user;
 	}
-    
-    
+
+	public void setPinned(boolean isPinned) {
+		this.isPinned = isPinned;
+	}
 
 }

@@ -5,20 +5,15 @@ import java.util.ArrayList;
 public class Teacher extends Employee implements Researcher{
     private List<Course> courses;
     private List<ResearchPaper> publishedPapers;
-    private List<ResearchProject> researchProjects; 
+    private List<ResearchProject> researchProjects;
+    private TeacherType teacherType;
+
 
     public Teacher(String firstName, String lastName, String id, String login, String password, Language language,
-			double salary, int yearOfJoin, boolean isResearcher, List<Course> courses,
-			List<ResearchPaper> publishedPapers, List<ResearchProject> researchProjects) {
+			double salary, int yearOfJoin, boolean isResearcher, TeacherType teacherType) {
 		super(firstName, lastName, id, login, password, language, salary, yearOfJoin, isResearcher);
-		this.courses = new ArrayList();
-		this.publishedPapers = new ArrayList<>();
-        this.researchProjects = new ArrayList<>();
-	}
-    
-    public Teacher(String firstName, String lastName, String id, String login, String password, Language language,
-			double salary, int yearOfJoin, boolean isResearcher) {
-		super(firstName, lastName, id, login, password, language, salary, yearOfJoin, isResearcher);
+        this.teacherType = teacherType;
+        if (teacherType == TeacherType.PROFESSOR) this.isResearcher = true;
 		this.courses = new ArrayList();
 		this.publishedPapers = new ArrayList<>();
         this.researchProjects = new ArrayList<>();
@@ -43,8 +38,8 @@ public class Teacher extends Employee implements Researcher{
         System.out.println(Translator.translate("addingMarks", Main.language) + " " + student.getFirstName() + " " + student.getLastName());
     }
 
-    public void fileComplaintAboutStudent(Student student, String complaintText) {
- 
+    public void sendComplaint(Student student, Manager manager, UrgencyLevel urgencyLevel, Complaint complaint) {
+        manager.considerComplaint(student, this, urgencyLevel, complaint);
     }
 
     public List<Student> getStudentsFromCourse(Course course) {

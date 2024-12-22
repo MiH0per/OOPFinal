@@ -1,5 +1,5 @@
 package Project;
 
 public interface Observer {
-	void update();
+	void update(String article);
 }

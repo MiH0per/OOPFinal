@@ -12,10 +12,14 @@ class Journal {
     public void subscribeToJournal(Observer observer) {
         subscribers.add(observer);
     }
+    public void deleteFromJournal(Observer observer) {
+        subscribers.remove(observer);
+    }
 
-    public void notifyObservers() {
+    public void notifyObservers(String article) {
+        System.out.println(Translator.translate("publishingArticle", Main.language) + ": " + article);
         for (Observer observer : subscribers) {
-            observer.update();
+            observer.update(article);
         }
     }
 }

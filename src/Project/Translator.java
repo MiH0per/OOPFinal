@@ -17,7 +17,10 @@ public class Translator {
                 Map.entry("teacherInfo", "Teacher for"),
                 Map.entry("courseNotFound", "Course not found"),
                 Map.entry("addingUser", "User added"),
-                Map.entry("removingUser", "User removed")
+                Map.entry("removingUser", "User removed"),
+                Map.entry("publishingArticle", "New article published"),
+                Map.entry("notifyingUser", "received an email notification"),
+                Map.entry("consideringComplaint", "Your complaint has been approved. Wait for a reply")
         );
         Map<String, String> ruMessages = Map.ofEntries(
                 Map.entry("greeting", "Добро пожаловать!"),
@@ -31,7 +34,10 @@ public class Translator {
                 Map.entry("teacherInfo", "Учитель курса"),
                 Map.entry("courseNotFound", "Курс не найден"),
                 Map.entry("addingUser", "Пользователь добавлен"),
-                Map.entry("removingUser", "Пользователь удален")
+                Map.entry("removingUser", "Пользователь удален"),
+                Map.entry("publishingArticle", "Опубликована новая статья"),
+                Map.entry("notifyingUser", "получил(-a) уведомление"),
+                Map.entry("consideringComplaint", "Ваша жалоба одобрена. Ждите ответа")
         );
         Map<String, String> kzMessages = Map.ofEntries(
                 Map.entry("greeting", "Қош келдіңіз!"),
@@ -44,7 +50,10 @@ public class Translator {
                 Map.entry("successRegistering", "Курсқа сәтті тіркелді:"),
                 Map.entry("teacherInfo", "Курс мұғалімі"),
                 Map.entry("addingUser", "Пайдаланушы қосылды"),
-                Map.entry("removingUser", "Пайдаланушы жойылды")
+                Map.entry("removingUser", "Пайдаланушы жойылды"),
+                Map.entry("publishingArticle", "Жаңа мақала жарияланды"),
+                Map.entry("notifyingUser", "хабарлама алды"),
+                Map.entry("consideringComplaint", "Шағымыңыз мақұлданды. Жауап күтіңіз.")
         );
 
         if (language == Language.EN) {

@@ -26,7 +26,14 @@ class User implements Observer {
     void changeLanguage(Language language) { this.language = language; }
 
     @Override
-    public void update() {}
+    public void update(String article) {
+		System.out.println(this.firstName + " " + this.lastName + " " +
+				Translator.translate("notifyingUser", Main.language) + ": " + article);
+	}
+
+	public void addComment(News news, Comment comment) {
+		news.addComment(comment);
+	}
     
     
     public String getFirstName() {

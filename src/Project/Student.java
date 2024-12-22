@@ -11,13 +11,15 @@ public class Student extends User implements Researcher{
     private List<StudentOrganization> studentOrganizations;
     private final int MAX_CREDITS = 21;
     private Faculty school;
+    private boolean isResearcher;
 
-    public Student(String firstName, String lastName, String id, String login, String password, Language language, Faculty school) {
+    public Student(String firstName, String lastName, String id, String login, String password, Language language, Faculty school, boolean isResearcher) {
         super(firstName, lastName, id, login, password, language);
         this.publishedPapers = new ArrayList<>();
         this.researchProjects = new ArrayList<>();
         this.enrolledCourses = new ArrayList<>();
         this.transcript = new Transcript(this);
+        this.isResearcher = isResearcher;
         this.school = school;
     }	
     

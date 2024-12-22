@@ -52,11 +52,11 @@ public class Main {
 				language = Language.EN;
 		}
 
-		User u1 = new Teacher("Zhumadir", "N.", "1", "n_zhumadir", "password", Language.EN, 999999.0, 2024, true);
-		Teacher teacher = new Teacher("Izbassar", "A.", "2", "a_izbassar", "password2", Language.RU, 222, 2024, false);
+		User u1 = new Teacher("Zhumadir", "N.", "1", "n_zhumadir", "password", Language.EN, 999999.0, 2024, true, TeacherType.LECTURER);
+		Teacher teacher = new Teacher("Izbassar", "A.", "2", "a_izbassar", "password2", Language.RU, 222, 2024, false, TeacherType.LECTURER);
 		Course oop_course = new Course("OOP", "1231", 9, 400, CourseType.MAJOR, teacher);
 		teacher.addCourse(oop_course);
-		Student u2 = new Student("Maxim", "Kramarov", "230B030299", "m_kramarov", "password3", Language.EN, Faculty.SITE);
+		Student u2 = new Student("Maxim", "Kramarov", "230B030299", "m_kramarov", "password3", Language.EN, Faculty.SITE, false);
 		System.out.println(u1.getFirstName());
 		User admin = new Admin("Admin", "admin", "123", "admin", "admin", Language.EN, 1, 2000, false);
 		System.out.println(admin.getLogin());
@@ -71,10 +71,7 @@ public class Main {
 
 		System.out.println();
 		
-		
-		
-		
-		
+
 		
 		u2.registerForCourse(oop_course);
 		teacher.setMark(u2, oop_course, 15.0, 20.0, 30.0);  
@@ -88,6 +85,13 @@ public class Main {
 		transcript.addMark(mark);
 		System.out.println(transcript.getMarksForCourse(oop_course));
 		System.out.println(transcript.calculateGPA());
+
+		System.out.println();
+
+		Journal techJournal = new Journal();
+		techJournal.subscribeToJournal(u1);
+		techJournal.subscribeToJournal(u2);
+		techJournal.notifyObservers("New article");
 		
 
 	}
