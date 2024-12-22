@@ -25,17 +25,17 @@ public class Student extends User implements Researcher{
     
     public void registerForCourse(Course course) { 
         enrolledCourses.add(course);
-        System.out.println("Successfully registered for course: " + course.getCourseName());
+        System.out.println(Translator.translate("successRegistering", Main.language) + " " + course.getCourseName());
     }
     
     //Просмотреть учителя
     public String viewTeacherInfo(String courseName) {
         for (Course course : enrolledCourses) {
             if (course.getCourseName().equalsIgnoreCase(courseName)) {
-                return "Teacher for " + courseName + ": " + course.getInstructor();
+                return Translator.translate("teacherInfo", Main.language) + " " + courseName + ": " + course.getInstructor();
             }
         }
-        return "Course not found!";
+        return Translator.translate("courseNotFound", Main.language);
     }
     
     //Доступные кредиты

@@ -57,19 +57,18 @@ class Course {
 		this.courseType = courseType;
 	}
 
-	public Teacher getInstructor() {
-		return instructor;
+	public String getInstructor() {
+		return instructor.getFirstName() + " " + instructor.getLastName();
 	}
 
 	public void setInstructor(Teacher instructor) {
 		this.instructor = instructor;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Course [name=" + name + ", code=" + code + ", credits=" + credits + ", maxNumberOfStudents="
-//				+ maxNumberOfStudents + ", courseType=" + courseType + ", instructor=" + instructor + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Course [name=" + name + ", code=" + code + ", credits=" + credits + "]";
+	}
 	
 	
 

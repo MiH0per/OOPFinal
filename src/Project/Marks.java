@@ -63,13 +63,33 @@ class Marks {
 	
 	@Override
 	public String toString() {
-	    return "Marks{" +
-	            "course=" + course +
-	            ", firstAtt=" + firstAtt +
-	            ", secondAtt=" + secondAtt +
-	            ", finalGrades=" + finalGrades +
-	            ", totalGrades=" + getTotalGrades() +
-	            '}';
+		if (Main.language == Language.EN) {
+			return "Marks{" +
+					"course=" + course +
+					", firstAtt=" + firstAtt +
+					", secondAtt=" + secondAtt +
+					", finalGrades=" + finalGrades +
+					", totalGrades=" + getTotalGrades() +
+					'}';
+		}
+		else if (Main.language == Language.KZ) {
+			return "Бағалар{" +
+					"курс=" + course +
+					", бірінші аттестация=" + firstAtt +
+					", екінші аттестация=" + secondAtt +
+					", файнал бағалар=" + finalGrades +
+					", жалпы бағалар=" + getTotalGrades() +
+					'}';
+		}
+		else {
+			return "Оценки{" +
+					"курс=" + course +
+					", первая аттестация=" + firstAtt +
+					", вторая аттестация=" + secondAtt +
+					", файнал баллы=" + finalGrades +
+					", общие баллы=" + getTotalGrades() +
+					'}';
+		}
 	}
 
     

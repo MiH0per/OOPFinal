@@ -40,7 +40,7 @@ public class Teacher extends Employee implements Researcher{
     public void setMark(Student student, Course course, double firstAtt, double secondAtt, double finalGrades) {  	
     	Marks newMark = new Marks(course, firstAtt, secondAtt, finalGrades);
         student.getTranscript().addMark(newMark);
-        System.out.println("Marks successfully added for " + student.getFirstName() + " " + student.getLastName());
+        System.out.println(Translator.translate("addingMarks", Main.language) + " " + student.getFirstName() + " " + student.getLastName());
     }
 
     public void fileComplaintAboutStudent(Student student, String complaintText) {
@@ -76,11 +76,11 @@ public class Teacher extends Employee implements Researcher{
 
 	@Override
 	public String toString() {
-		return "Teacher [courses=" + courses + ", publishedPapers=" + publishedPapers + ", researchProjects="
-				+ researchProjects + ", salary=" + salary + ", yearOfJoin=" + yearOfJoin + ", isResearcher="
-				+ isResearcher + ", firstName=" + firstName + ", lastName=" + lastName + ", id=" + id + ", login="
-				+ login + ", password=" + password + ", language=" + language + "]";
-	}
+        return "Teacher [courses=" + courses + ", publishedPapers=" + publishedPapers + ", researchProjects="
+                + researchProjects + ", salary=" + salary + ", yearOfJoin=" + yearOfJoin + ", isResearcher="
+                + isResearcher + ", firstName=" + firstName + ", lastName=" + lastName + ", id=" + id + ", login="
+                + login + ", password=" + password + ", language=" + language + "]";
+    }
 	
 	
  

@@ -11,12 +11,12 @@ class Admin extends Employee {
 	}
     
     public void addUser(User user) {
-        System.out.println("User added: " + user);
+        System.out.println(Translator.translate("addingUser", Main.language) + ": " + user);
         Data.addUser(user);
     }
 
     public void removeUser(String userId) {
-        System.out.println("User removed: " + userId);
+        System.out.println(Translator.translate("removingUser", Main.language) + ": " + userId);
     }
 
    
